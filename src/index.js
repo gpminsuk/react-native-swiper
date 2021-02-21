@@ -225,15 +225,6 @@ export default class extends Component {
     if (this.props.autoplay && !prevProps.autoplay) {
       this.autoplay()
     }
-    if (this.props.children !== prevProps.children) {
-      if (this.props.loadMinimal && Platform.OS === 'ios') {
-        this.setState({ ...this.props, index: this.state.index })
-      } else {
-        this.setState(
-          this.initState({ ...this.props, index: this.state.index }, true)
-        )
-      }
-    }
   }
 
   initState(props, updateIndex = false) {
